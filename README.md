@@ -14,7 +14,12 @@ Pipe different tools with google dork Scanner
 
 ### Install
 
-`zoid@MSI ~/dorkX> git clone https://github.com/ethicalhackingplayground/dorkX && cd corsX && go build`
+`zoid@MSI ~/dorkX> git clone https://github.com/ethicalhackingplayground/dorkX`
+`zoid@MSI ~/dorkX> cd dorkX`
+`zoid@MSI ~/dorkX> go build dorkx.go`
+`zoid@MSI ~/dorkX> go build corsx.go`
+`zoid@MSI ~/dorkX> go build csrfx.go`
+`zoid@MSI ~/dorkX> go build zin.go`
 
 
 
@@ -22,27 +27,27 @@ Pipe different tools with google dork Scanner
 
 **XSS**
 
-`zoid@MSI ~/dorkX> ./dorkX -dorks dorks.txt | dalfox pipe`
+`zoid@MSI ~/dorkX> ./dorkx -dorks dorks.txt | dalfox pipe`
 
-`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" | dalfox pipe`
+`zoid@MSI ~/dorkX> ./dorkx -dork "inurl:index.php?id" | dalfox pipe`
 
 **Cors**
 
-`zoid@MSI ~/dorkX>  ./dorkX -dorks dorks.txt | ./corsX`
+`zoid@MSI ~/dorkX>  ./dorkx -dorks dorks.txt | ./corsx`
 
-`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" | ./corsX`
+`zoid@MSI ~/dorkX> ./dorkx -dork "inurl:index.php?id" | ./corsx`
 
 **CSRF**
 
-`zoid@MSI ~/dorkX>  ./dorkX -dorks dorks.txt | ./csrfX`
+`zoid@MSI ~/dorkX>  ./dorkx -dorks dorks.txt | ./csrfx`
 
-`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" | ./csrfX`
+`zoid@MSI ~/dorkX> ./dorkx -dork "inurl:index.php?id" | ./csrfx`
 
 **Payload Injection**
 
-`zoid@MSI ~/dorkX>  ./dorkX -dorks dorks.txt | ./zin -pL <payloadList>`
+`zoid@MSI ~/dorkX>  ./dorkx -dorks dorks.txt | ./zin -pL <payloadList>`
 
-`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" |./zin -p <payload>`
+`zoid@MSI ~/dorkX> ./dorkx -dork "inurl:index.php?id" |./zin -p <payload>`
 
 
 **If you get a bounty please support by buying me a coffee**
