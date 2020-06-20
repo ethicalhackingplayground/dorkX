@@ -15,10 +15,15 @@ Pipe different tools with google dork Scanner
 ### Install
 
 `zoid@MSI ~/dorkX> git clone https://github.com/ethicalhackingplayground/dorkX`
+
 `zoid@MSI ~/dorkX> cd dorkX`
+
 `zoid@MSI ~/dorkX> go build dorkx.go`
+
 `zoid@MSI ~/dorkX> go build corsx.go`
+
 `zoid@MSI ~/dorkX> go build csrfx.go`
+
 `zoid@MSI ~/dorkX> go build zin.go`
 
 
