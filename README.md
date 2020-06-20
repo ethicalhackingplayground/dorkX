@@ -20,10 +20,29 @@ Pipe different tools with google dork Scanner
 
 ### Usage:
 
+**XSS**
+
 `zoid@MSI ~/dorkX> ./dorkX -dorks dorks.txt | dalfox pipe`
 
 `zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" | dalfox pipe`
 
+**Cors**
+
+`zoid@MSI ~/dorkX>  ./dorkX -dorks dorks.txt | ./corsX`
+
+`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" | ./corsX`
+
+**CSRF**
+
+`zoid@MSI ~/dorkX>  ./dorkX -dorks dorks.txt | ./csrfX`
+
+`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" | ./csrfX`
+
+**Payload Injection**
+
+`zoid@MSI ~/dorkX>  ./dorkX -dorks dorks.txt | ./zin -pL <payloadList>`
+
+`zoid@MSI ~/dorkX> ./dorkX -dork "inurl:index.php?id" |./zin -p <payload>`
 
 
 **If you get a bounty please support by buying me a coffee**
