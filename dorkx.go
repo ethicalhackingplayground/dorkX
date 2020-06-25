@@ -15,24 +15,23 @@ import (
 
 
 func main () {
-
-
-
-        var concurrency int
-        flag.IntVar(&concurrency, "concurrency", 10, "Set the concurrency of the tool")
-        var dork string
-        flag.StringVar(&dork, "dork", "inurl:.php/?id=", "The dork to search for")
-	var dorks string
-        flag.StringVar(&dorks, "dorks", "", "The list of dorks to search for")
+        var concurrency=flag.Int("concurrency", 10, "Set the concurrency of the tool")
+        var dork=flag.String("dork", "", "The dork to search for")
+        var dorks=flag.String("dorks", "", "The list of dorks to search for")
+	flag.Parse()
         var wg sync.WaitGroup
-        for i:=0; i<concurrency/2; i++ {
+	if *dork == "" && *dorks == "" {
+		flag.PrintDefaults()
+		return
+	}
+        for i:=0; i<*concurrency/2; i++ {
                 wg.Add(1)
                 go func() {
-			if dorks == "" {
-                        	dorkScanner(dork)
+			if *dork != "" && *dorks == "" {
+                        	dorkScanner(*dork)
                         	wg.Done()	
 			}else {
-				file, err := os.Open(dorks)
+				file, err := os.Open(*dorks)
     				if err != nil {
         				log.Fatal(err)
     				}
